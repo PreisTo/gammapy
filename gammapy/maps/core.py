@@ -75,7 +75,7 @@ class Map(abc.ABC):
         for arg in argnames:
             value = getattr(self, "_" + arg)
             if arg not in kwargs:
-                kwargs[arg] = copy.deepcopy(value)
+                kwargs[arg] = copy.copy(value)
 
         return self.from_geom(**kwargs)
 
